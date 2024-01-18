@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='C:\Users\Saanvi Tayal\Downloads\AI-Yoga-Guru-main\static\styles\main.css'> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <script src='main.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <div class="left">AI YogaGuru</div>
+            <div class="right">
+                <ul>
+                    <li>About</li>
+                    <li>Workouts</li>
+                    <li>Your Progress</li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class="title">AI Yoga Guru</div>
+        <div class="sub ">Your Fitness trainer</div>
+    </section>
+
+    <section class="Workouts">
+        <div class="banner">Choose Your Workout Plan</div>
+        <div class="right">
+
+            <div class="workout-card">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/w_403,c_limit/9eac2f29-f712-4c48-a4b8-e6e38963ce8b/10-easy-at-home-cardio-workouts-no-equipment-required.jpg"
+                    class="card-img-top" alt="image">
+                <div class="card-body"><br>
+                    <h4 class="Card Title">Full Body Stretch</h5>
+                        <p class="card-text"></p>
+                        <a href="{{url_for('cardio')}}" id="stretch" class="startbtn">Start Workout</a>
+                </div>
+            </div>
+
+            <div class="workout-card">
+                <img src="https://img.mensxp.com/media/content/2019/May/cardio-makes-your-body-look-aesthetically-pleasing800-1558086913.jpg"
+                    class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h4 class="Card Title">Cardio</h5>
+                        <p class="card-text"></p>
+                        <a href="#" class="startbtn">Start Workout</a>
+                </div>
+            </div>
+
+            <div class="workout-card">
+                <img src="https://www.hindustantimes.com/ht-img/img/2023/06/18/1600x900/sleep_asanas_1687087341644_1687087354433.jpg"
+                    class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h4 class="Card Title">Yoga</h5>
+                        <p class="card-text"></p>
+                        <a href="#" class="startbtn">Start Workout</a>
+                </div>
+            </div>
+
+            <div class="workout-card">
+                <img src="https://www.hindustantimes.com/ht-img/img/2023/06/18/1600x900/sleep_asanas_1687087341644_1687087354433.jpg"
+                    class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h4 class="Card Title">Yoga</h5>
+                        <p class="card-text"></p>
+                        <a href="#" class="startbtn">Start Workout</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Routine</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+    <h1>Exercise Routine</h1>
+
+    <div id="exerciseContent">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <button id="startButton">Start Workout</button>
+
+    <script>
+        let exercises = {{ pose }};
+        let currentExercise = 0;
+
+        function displayExercise() {
+            if (currentExercise < exercises.length) {
+                let exercise = exercises[currentExercise];
+                $('#exerciseContent').html('<h2>' + exercise.name + '</h2><img src="' + exercise.url + '" alt="' + exercise.name + '">');
+                currentExercise++;
+            } else {
+                $('#exerciseContent').html('<h2>Workout Complete!</h2>');
+                $('#startButton').prop('disabled', true);
+            }
+        }
+
+        $(document).ready(function() {
+            $('#startButton').click(function() {
+                displayExercise();
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
