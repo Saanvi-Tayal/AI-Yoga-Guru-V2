@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Routine</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+    <h1>Exercise Routine</h1>
+
+    <div id="exerciseContent">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <button id="startButton">Start Workout</button>
+
+    <script>
+        let exercises = {{ pose }};
+        let currentExercise = 0;
+
+        function displayExercise() {
+            if (currentExercise < exercises.length) {
+                let exercise = exercises[currentExercise];
+                $('#exerciseContent').html('<h2>' + exercise.name + '</h2><img src="' + exercise.url + '" alt="' + exercise.name + '">');
+                currentExercise++;
+            } else {
+                $('#exerciseContent').html('<h2>Workout Complete!</h2>');
+                $('#startButton').prop('disabled', true);
+            }
+        }
+
+        $(document).ready(function() {
+            $('#startButton').click(function() {
+                displayExercise();
+            });
+        });
+    </script>

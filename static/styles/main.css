@@ -15,8 +15,12 @@ nav {
     height: 110px;
     flex-shrink: 0;
     color: white;
-}
+    flex-direction: column;
 
+}
+.right{
+    flex-direction: column;
+}
 .left {
     position: absolute;
     top:15px;
@@ -33,7 +37,7 @@ nav {
 }
 nav ul {
     display: flex;
-    justify-content: center;
+    position: center;
     list-style: none;
     color: white;
     text-align: center;
@@ -95,6 +99,7 @@ display: flex;
     flex: 3;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .workout-card {
@@ -111,6 +116,7 @@ display: flex;
     text-align: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
 }
 .card-img-top{
     inherits: workout-card;

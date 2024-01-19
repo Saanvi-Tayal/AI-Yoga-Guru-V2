@@ -21,7 +21,7 @@
             <div class="right">
                 <ul>
                     <li>About</li>
-                    <li>Workouts</li>
+                    <li><a href = "#workouts">Workouts</a href></li>
                     <li>Your Progress</li>
                 </ul>
             </div>
@@ -31,7 +31,7 @@
         <div class="sub ">Your Fitness trainer</div>
     </section>
 
-    <section class="Workouts">
+    <section id="workouts" class="Workouts">
         <div class="banner">Choose Your Workout Plan</div>
         <div class="right">
 
@@ -77,44 +77,6 @@
         </div>
 
     </section>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Routine</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-
-    <h1>Exercise Routine</h1>
-
-    <div id="exerciseContent">
-        <!-- Content will be dynamically loaded here -->
-    </div>
-
-    <button id="startButton">Start Workout</button>
-
-    <script>
-        let exercises = {{ pose }};
-        let currentExercise = 0;
-
-        function displayExercise() {
-            if (currentExercise < exercises.length) {
-                let exercise = exercises[currentExercise];
-                $('#exerciseContent').html('<h2>' + exercise.name + '</h2><img src="' + exercise.url + '" alt="' + exercise.name + '">');
-                currentExercise++;
-            } else {
-                $('#exerciseContent').html('<h2>Workout Complete!</h2>');
-                $('#startButton').prop('disabled', true);
-            }
-        }
-
-        $(document).ready(function() {
-            $('#startButton').click(function() {
-                displayExercise();
-            });
-        });
-    </script>
 
 
 
